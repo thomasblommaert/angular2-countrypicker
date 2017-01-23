@@ -2,7 +2,7 @@
 
 **Angular 2 Country Picker - Country selector with Bootstrap support by default, but can be used with any other UI framework (e.g. Ionic or Angular Material)**
 
-[![Build Status](https://travis-ci.org/Paldom/angular2-countrypicker.svg?branch=master)](https://travis-ci.org/paldom/angular2-countrypicker)
+[![Build Status](https://travis-ci.org/Paldom/angular2-countrypicker.svg?branch=master)](https://travis-ci.org/Paldom/angular2-countrypicker)
 [![npm](https://img.shields.io/npm/v/angular2-countrypicker.svg?maxAge=2592000?style=flat-square)](https://www.npmjs.com/package/angular2-countrypicker)
 
 ## Credits
