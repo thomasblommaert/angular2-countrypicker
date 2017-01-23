@@ -5,21 +5,24 @@ import 'rxjs/add/observable/throw';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { CountryPickerConfig } from './country-picker.config'
 import { ICountry } from './country.interface';
 
 @Injectable()
 export class CountryPickerService {
 
-  private baseUrl = './countries.json';
+  private dataUrl = 'countries.json';
   private data: Observable<ICountry[]> = null;
 
-  constructor(private http: Http) {
+  public baseUrl = './';
+
+  constructor(private config: CountryPickerConfig, private http: Http) {
+    this.baseUrl = config.baseUrl;
     this.data = this.loadData();
-    // this.loadData().subscribe(res => this.data = res)
   }
 
   private loadData(): Observable<ICountry[]> {
-    return this.http.get(this.baseUrl)
+    return this.http.get(this.baseUrl + this.dataUrl)
       .map((res: Response) => { return res.json() || {} })
       .catch(this.handleError);
   }
