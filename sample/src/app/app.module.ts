@@ -5,7 +5,7 @@ import { HttpModule, Http } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { CountryPickerModule } from 'angular2-countrypicker';
-
+import { MaterialModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -15,6 +15,7 @@ import { CountryPickerModule } from 'angular2-countrypicker';
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule.forRoot(),
     CountryPickerModule.forRoot(),
     // CountryPickerModule.forRoot({
     //   baseUrl: 'assets/'

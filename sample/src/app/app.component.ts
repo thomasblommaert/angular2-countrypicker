@@ -7,7 +7,7 @@ import { CountryPickerService } from 'angular2-countrypicker';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Angular 2 Country Picker - Demo Page';
+  title = 'angular2-countrypicker';
 
   public countries: any[];
 

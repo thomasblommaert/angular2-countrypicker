@@ -10,7 +10,7 @@ export * from './src/country-picker.component';
 export * from './src/country-picker.service';
 export * from './src/country-picker.config';
 
-let countryPickerServiceFactory = (config: CountryPickerConfig, http: Http) => {
+export function countryPickerServiceFactory(config: CountryPickerConfig, http: Http) {
   return new CountryPickerService(config, http);
 }
 

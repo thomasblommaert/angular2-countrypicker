@@ -7,27 +7,41 @@ import { CountryPickerService } from './country-picker.service';
 @Component({
   selector: 'countryPicker',
   template: `<select class="form-control form-control-sm">
-                <option *ngFor="let c of countries; let i = index;" [value]="getValue(c)"><img [hidden]="!flag" src="{{baseUrl + c.cca3}}">getName(c)</option>
+                <option *ngFor="let c of countries; let i = index;" [value]="getValue(c)"><img [hidden]="!flag" src="{{baseUrl + c.cca3}}.svg">{{getName(c)}}</option>
             </select>`
 })
 export class CountryPickerComponent {
 
   @Input() flag: boolean = false;
-  @Input() value: string = 'cca3';
-  @Input() name: string = 'name.common';
+  @Input() setValue: string = 'cca3';
+  @Input() setName: string = 'name.common';
 
   public countries: ICountry[];
+  public baseUrl: string = '';
 
   constructor(private countryPickerService: CountryPickerService) {
-    this.countryPickerService.getCountries().subscribe(countries => this.countries = countries);
+    this.countryPickerService.getCountries().subscribe(countries => {
+      this.countries = countries.sort((a: ICountry, b: ICountry) => {
+        let na = this.getName(a);
+        let nb = this.getName(b); 
+        if (na > nb) {
+          return 1;
+        }
+        if (na < nb) {
+          return -1;
+        }
+        return 0;
+      });
+    });
+    this.baseUrl = countryPickerService.baseUrl + "data/";
   }
 
   public getValue(obj: ICountry) {
-    _.get(obj, this.value);
+    return _.get(obj, this.setValue);
   }
 
   public getName(obj: ICountry) {
-    _.get(obj, this.name);
+    return _.get(obj, this.setName);
   }
 
 }
