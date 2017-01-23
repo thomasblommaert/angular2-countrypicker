@@ -4,7 +4,6 @@
   "scripts": {
     "lint": "tslint src/**/*.ts",
     "test": "tsc && karma start",
-    "prepublish": "tsc",
     "tsc": "tsc"
   },
   "repository": {
