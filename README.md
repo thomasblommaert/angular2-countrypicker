@@ -38,7 +38,7 @@ import { CountryPickerModule } from 'angular2-countrypicker';
 export class AppModule { }
 ```
 
-***Don't forget to add static countries.json and flag svg assets from mledoze's [country collection](https://mledoze.github.io/countries/)**
+**Don't forget to add static countries.json and flag svg assets from mledoze's [country collection](https://mledoze.github.io/countries/)**
 Using angular-cli, static asset import is not yet supported (https://github.com/angular/angular-cli/issues/3555), so please put required data into assets folder
 like the [example](http://paldom.github.io/angular2-countrypicker) in the **sample** folder.
 You can also specify the location of the assets:
@@ -50,7 +50,7 @@ You can also specify the location of the assets:
       baseUrl: 'assets/'
     })
   ]
-  
+
 ```
 
 ## Usage
