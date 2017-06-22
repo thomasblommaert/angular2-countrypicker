@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "ES5",
+    "target": "es5",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
@@ -10,7 +10,8 @@
     "outDir": "./dist",
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "lib": ["dom", "es6"]
   },
   "files": [
     "index.ts"
