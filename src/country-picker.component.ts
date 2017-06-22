@@ -23,7 +23,7 @@ export class CountryPickerComponent {
     this.countryPickerService.getCountries().subscribe(countries => {
       this.countries = countries.sort((a: ICountry, b: ICountry) => {
         let na = this.getName(a);
-        let nb = this.getName(b); 
+        let nb = this.getName(b);
         if (na > nb) {
           return 1;
         }
@@ -32,8 +32,8 @@ export class CountryPickerComponent {
         }
         return 0;
       });
-    });
-    this.baseUrl = countryPickerService.baseUrl + "data/";
+    })
+    this.baseUrl = countryPickerService.baseUrl + 'data/';
   }
 
   public getValue(obj: ICountry) {

@@ -36,4 +36,3 @@ export interface ICountry {
     borders: [string];
     area: number;
 }
-
