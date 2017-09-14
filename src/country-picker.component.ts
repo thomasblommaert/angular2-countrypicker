@@ -7,7 +7,7 @@ import { CountryPickerService } from './country-picker.service';
 @Component({
   selector: 'countryPicker',
   template: `<select class="form-control form-control-sm">
-                <option *ngFor="let c of countries; let i = index;" [value]="getValue(c)"><img [hidden]="!flag" src="{{baseUrl + c.cca3}}.svg">{{getName(c)}}</option>
+                <option *ngFor="let c of countries" [value]="getValue(c)"><img *ngIf="flag" src="{{baseUrl + c.cca3.toLowerCase()}}.svg">{{getName(c)}}</option>
             </select>`
 })
 export class CountryPickerComponent {
@@ -23,7 +23,7 @@ export class CountryPickerComponent {
     this.countryPickerService.getCountries().subscribe(countries => {
       this.countries = countries.sort((a: ICountry, b: ICountry) => {
         let na = this.getName(a);
-        let nb = this.getName(b); 
+        let nb = this.getName(b);
         if (na > nb) {
           return 1;
         }
@@ -32,8 +32,8 @@ export class CountryPickerComponent {
         }
         return 0;
       });
-    });
-    this.baseUrl = countryPickerService.baseUrl + "data/";
+    })
+    this.baseUrl = countryPickerService.baseUrl + 'data/';
   }
 
   public getValue(obj: ICountry) {
